@@ -2,17 +2,15 @@
 //números introducidos junto con las palabras “máximo” y “mínimo” al lado del
 //máximo y del mínimo respectivamente.
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class ArrayList1 {
     public static void main(String[] args) {
-        List<Integer> numeros = new ArrayList<>();
-
-        // Agregar directamente los números del 1 al 10
-        for (int i = 1; i <= 10; i++) {
-            numeros.add(i);
-        }
+        List<Integer> numeros = new ArrayList<>(Arrays.asList(
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+        ));
 
         int maximo = Collections.max(numeros);
         int minimo = Collections.min(numeros);
@@ -21,10 +19,12 @@ public class ArrayList1 {
         for (int numero : numeros) {
             if (numero == maximo) {
                 System.out.println(numero + " (máximo)");
-            } else if (numero == minimo) {
-                System.out.println(numero + " (mínimo)");
             } else {
-                System.out.println(numero);
+                if (numero == minimo) {
+                    System.out.println(numero + " (mínimo)");
+                } else {
+                    System.out.println(numero);
+                }
             }
         }
     }
