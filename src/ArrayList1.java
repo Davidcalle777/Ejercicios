@@ -5,12 +5,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.*;
 
 public class ArrayList1 {
     public static void main(String[] args) {
-        List<Integer> numeros = new ArrayList<>(Arrays.asList(
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
-        ));
+        ArrayList<Integer> numeros = new ArrayList<>();
+        Random random = new Random();
+
+        // Generate 10 random numbers between 0 and 100
+        for (int i = 0; i < 10; i++) {
+            numeros.add(random.nextInt(101)); // 101 is exclusive upper bound
+        }
 
         int maximo = Collections.max(numeros);
         int minimo = Collections.min(numeros);
